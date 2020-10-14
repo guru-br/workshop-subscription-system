@@ -12,6 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2020_10_15_234119) do
 
+  enable_extension "plpgsql"
+
   create_table "attendees", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
