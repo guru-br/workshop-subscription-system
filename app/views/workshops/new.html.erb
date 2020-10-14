@@ -1,0 +1,25 @@
+<h1>Registrar Workshop</h1>
+
+<%= form_with(model: Workshop.new, local: true) do |f| %>
+  <div>
+    <%= f.label :name, 'Nome' %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :short_description, 'Descrição Curta' %>
+    <%= f.text_field :short_description %>
+  </div>
+  <div>
+    <%= f.label :full_description, 'Descrição Completa' %>
+    <%= f.text_field :full_description %>
+  </div>
+  <div>
+    <%= f.label :attendees, 'Capacidade Máxima' %>
+    <%= f.text_field :attendees %>
+  </div>
+  <div>
+    <%= f.label :duration, 'Duração' %>
+    <%= f.text_field :duration %>
+  </div>
+  <%= f.submit 'Registrar' %>
+<% end %>
