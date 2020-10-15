@@ -5,7 +5,7 @@ feature 'Admin register workshop' do
     # Arrange
     user = User.create!(email: 'user@ruby.com.br', password: '12345678')
     # Act
-    login_as user
+    login_as user, scope: :user
     visit root_path
     click_on 'Registrar Workshop'
 
