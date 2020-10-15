@@ -18,8 +18,16 @@
     <%= f.text_field :attendees %>
   </div>
   <div>
+    <%= f.label :workshop_date, 'Data' %>
+    <%= f.date_field :workshop_date %>
+  </div>
+  <div>
+    <%= f.label :start_time, 'Hora' %>
+    <%= f.time_field :start_time %>
+  </div>
+  <div>
     <%= f.label :duration, 'Duração' %>
-    <%= f.text_field :duration %>
+    <%= f.number_field :duration %>
   </div>
   <%= f.submit 'Registrar' %>
 <% end %>

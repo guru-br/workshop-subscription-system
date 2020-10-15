@@ -1,4 +1,5 @@
 class WorkshopsController < ApplicationController
+  before_action :authenticate_user!
   # GET
   def new
   end
@@ -21,6 +22,7 @@ class WorkshopsController < ApplicationController
     #Strong Parameters
     params.require(:workshop).permit(:name, :short_description,
                                      :full_description, :duration,
-                                     :attendees)
+                                     :attendees, :workshop_date,
+                                     :start_time)
   end
 end
