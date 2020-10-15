@@ -11,6 +11,12 @@ relacionados ao workshop.
 
 #ToDo
 
+## Como colaborar
+
+Depois de criar seu `fork`, Escolha uma [issue](https://github.com/guru-br/workshop-subscription-system/issues), abra uma nova `branch` em seu computador e codifique o que julgar necessário para encerrar a `issue`. Em seguida crie um `pull request` informando o número da `issue` que está encerrando. 
+
+Referência: https://docs.github.com/en/enterprise/2.16/user/github/managing-your-work-on-github/closing-issues-using-keywords
+
 ## Models
 
 ### User
