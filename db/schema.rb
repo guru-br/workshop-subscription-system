@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_15_221758) do
+ActiveRecord::Schema.define(version: 2020_10_15_234119) do
+
+  create_table "attendees", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_attendees_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_attendees_on_reset_password_token", unique: true
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.integer "workshop_id", null: false
+    t.integer "attendee_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["attendee_id"], name: "index_enrollments_on_attendee_id"
+    t.index ["workshop_id"], name: "index_enrollments_on_workshop_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +43,15 @@ ActiveRecord::Schema.define(version: 2020_10_15_221758) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "workshop_contents", force: :cascade do |t|
+    t.integer "workshop_id", null: false
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["workshop_id"], name: "index_workshop_contents_on_workshop_id"
   end
 
   create_table "workshops", force: :cascade do |t|
@@ -36,4 +66,7 @@ ActiveRecord::Schema.define(version: 2020_10_15_221758) do
     t.time "start_time"
   end
 
+  add_foreign_key "enrollments", "attendees"
+  add_foreign_key "enrollments", "workshops"
+  add_foreign_key "workshop_contents", "workshops"
 end
