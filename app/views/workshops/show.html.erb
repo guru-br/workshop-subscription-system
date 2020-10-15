@@ -1,0 +1,13 @@
+<h1><%= @workshop.name %></h1>
+<dl>
+  <dt>Descrição Curta</dt>
+  <dd><%= @workshop.short_description %></dd>
+  <dt>Descrição Completa</dt>
+  <dd><%= @workshop.full_description %></dd>
+  <dt>Duração</dt>
+  <dd><%= @workshop.duration %> minutos</dd>
+  <dt>Data</dt>
+  <dd><%= I18n.localize @workshop.workshop_date %></dd>
+  <dt>Hora</dt>
+  <dd><%= l @workshop.start_time, format: :short %></dd>
+</dl>
