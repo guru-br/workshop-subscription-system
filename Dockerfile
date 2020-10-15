@@ -23,9 +23,13 @@ RUN mkdir -p $INSTALL_PATH
 WORKDIR $INSTALL_PATH
 ADD Gemfile Gemfile
 ADD Gemfile.lock Gemfile.lock
-RUN gem install bundler
 RUN bundle install
+
+ADD yarn.lock yarn.lock
+ADD package.json packages.json
+RUN yarn install --check-files
 
 ADD . $INSTALL_PATH
 
-RUN yarn install --check-files
+ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]
+CMD ["rails", "server", "-b", "0.0.0.0"]

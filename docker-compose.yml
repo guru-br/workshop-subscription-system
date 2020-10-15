@@ -2,12 +2,12 @@ version: '3'
 services:
   web:
     build: .
-    command: rails s -b 0.0.0.0
     container_name: workshop_subscription
     ports:
       - 3000:3000
     volumes:
       - .:/workshop
+      - gem_cache:/usr/local/bundle/gems
     env_file:
       - .env
     depends_on:
@@ -20,3 +20,4 @@ services:
       - workshop_subscription:/var/lib/postgresql/data
 volumes:
   workshop_subscription:
+  gem_cache:

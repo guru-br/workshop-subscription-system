@@ -45,6 +45,9 @@ Conteúdos vinculados a um workshop e disponíveis somente para os participantes
 
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
+- Criar o arquivo `.env` para incluir as variaveis de ambientes necessárias
+  - O conteudo do arquivo pode ser igual ao `.env.sample` presente na raiz do
+    projeto
 
 ### Instalação via Docker
 
@@ -80,7 +83,11 @@ A versão web estara disponível em localhost:3000
 
 ### Executar os testes dentro do Docker
 
-TODO: Instalar o RSpec e escrever os testes
+Na pasta do projeto, após a instalação, execute:
+
+```
+docker-compose run --rm web rspec
+```
 
 ### Entrar dentro do container do Docker
 
