@@ -10,4 +10,6 @@
   <dd><%= I18n.localize @workshop.workshop_date %></dd>
   <dt>Hora</dt>
   <dd><%= l @workshop.start_time, format: :short %></dd>
+  <dt>Status</dt>
+  <dd><%= @workshop.human_status %></dd>
 </dl>

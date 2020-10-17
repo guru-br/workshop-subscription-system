@@ -29,6 +29,7 @@ feature 'Admin register workshop' do
     expect(page).to have_content '60 minutos'
     expect(page).to have_content '05/12/2020'
     expect(page).to have_css('dd', text: /^14:00$/ )
+    expect(page).to have_content 'Rascunho'
   end
 
   context 'must be signed in' do
