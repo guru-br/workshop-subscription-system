@@ -1,0 +1,28 @@
+require:
+  - rubocop-rails
+inherit_mode:
+  merge:
+    - Exclude
+AllCops:
+  TargetRubyVersion: 2.7.1
+  UseCache: false
+  Exclude:
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'script/**/*'
+    - 'config/**/*'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context', 'feature', 'scenario', 'let']
+Layout/LineLength:
+  Max: 80
+Style/AsciiComments:
+  Enabled: false
+Rails/HasAndBelongsToMany:
+  Enabled: false
