@@ -1,6 +1,6 @@
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 2.5.7
+  TargetRubyVersion: 2.7.1
   Exclude:
     - 'db/**/*'
     - 'config/**/*'
