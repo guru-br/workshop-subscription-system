@@ -8,3 +8,4 @@ class Workshop < ApplicationRecord
     I18n.t("activerecord.attributes.#{model_name.i18n_key}.status.#{status}")
   end
 end
+

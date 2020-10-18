@@ -16,6 +16,13 @@ class WorkshopsController < ApplicationController
     @workshop = Workshop.find(params[:id])
   end
 
+  # PATCH /workshops/:id/activate
+  def activate
+    workshop = Workshop.find(params[:id])
+    workshop.active!
+    redirect_to workshop, notice: 'Workshop atualizado com sucesso'
+  end
+
   private
 
   def workshop_params

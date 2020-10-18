@@ -3,5 +3,6 @@ pt-BR:
     attributes:
       workshop:
         status:
+          active: 'Ativo'
           draft: 'Rascunho'
 
