@@ -1,5 +1,5 @@
 class WorkshopsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :show
   # GET
   def new
   end
@@ -14,6 +14,9 @@ class WorkshopsController < ApplicationController
   # GET /workshops/:id
   def show
     @workshop = Workshop.find(params[:id])
+		if !user_signed_in? && @workshop.draft?
+			redirect_to root_path, notice: 'Este workshop está indisponível'
+		end
   end
 
   # PATCH /workshops/:id/activate
