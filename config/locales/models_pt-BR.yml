@@ -5,4 +5,5 @@ pt-BR:
         status:
           active: 'Ativo'
           draft: 'Rascunho'
+          inactive: 'Inativo'
 
