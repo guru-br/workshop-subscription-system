@@ -1,0 +1,8 @@
+<h1><%= t('.title') %></h1>
+
+<%= render "form", workshop: @workshop, form_action: t(".submit") do |f| %>
+  <div>
+    <%= f.label :status %>
+    <%= f.select :status, Workshop::STATUSES.collect {|status| [I18n.t("workshops.status.#{status}"), status] }  %>
+  </div>
+<% end %>

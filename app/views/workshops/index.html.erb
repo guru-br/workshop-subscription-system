@@ -1,15 +1,25 @@
-<% @workshops.each do |workshop| %>
-  <h1><%= workshop.name %></h1>
-  <dl>
-    <dt><%= I18n.t 'activerecord.attributes.workshop.short_description' %></dt>
-    <dd><%= workshop.short_description %></dd>
-    <dt><%= I18n.t 'activerecord.attributes.workshop.duration' %></dt>
-    <dd><%= workshop.duration %> minutos</dd>
-    <dt><%= I18n.t 'activerecord.attributes.workshop.workshop_date' %></dt>
-    <dd><%= I18n.localize workshop.workshop_date %></dd>
-    <dt><%= I18n.t 'activerecord.attributes.workshop.start_time' %></dt>
-    <dd><%= l workshop.start_time, format: :short %></dd>
-    <dt><%= I18n.t 'activerecord.attributes.workshop.attendees' %></dt>
-    <dd><%= workshop.attendees %></dd>
-  </dl>
+<h1><%= t(".title") %></h1>
+
+<% if @workshops.any? %>
+
+  <% @workshops.each do |workshop| %>
+    <h1><%= workshop.name %></h1>
+    <dl>
+      <dt><%= I18n.t 'activerecord.attributes.workshop.short_description' %></dt>
+      <dd><%= workshop.short_description %></dd>
+      <dt><%= I18n.t 'activerecord.attributes.workshop.duration' %></dt>
+      <dd><%= workshop.duration %> minutos</dd>
+      <dt><%= I18n.t 'activerecord.attributes.workshop.workshop_date' %></dt>
+      <dd><%= I18n.localize workshop.workshop_date %></dd>
+      <dt><%= I18n.t 'activerecord.attributes.workshop.start_time' %></dt>
+      <dd><%= l workshop.start_time, format: :short %></dd>
+      <dt><%= I18n.t 'activerecord.attributes.workshop.attendees' %></dt>
+      <dd><%= workshop.attendees %></dd>
+      <dt><%= t(".table.action") %></dt>
+      <dd><%= link_to t('.edit'), edit_workshop_path(workshop) %></dd>
+    </dl>
+  <% end %>
+
+<% else %>
+  <p><%= t(".table.empty") %></p>
 <% end %>

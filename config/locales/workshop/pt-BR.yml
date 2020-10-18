@@ -1,0 +1,29 @@
+pt-BR:
+  workshops:
+    status:
+      draft: 'Rascunho'
+      active: 'Ativo'
+      inactive: 'Inativo'
+
+    notices:
+      edit:
+        success: 'O workshop "%{name}" foi editado com sucesso'
+      show:
+        draft_workshop: 'Não é possível acessar esse workshop no momento'
+
+    index:
+      edit: 'Editar'
+      title: 'Workshop'
+      table:
+        name: 'Nome'
+        status: 'Status'
+        action: 'Ação'
+        empty: 'Não há workshops registrados'
+
+    edit:
+      title: 'Editar Workshop'
+      submit: 'Editar'
+
+    new:
+      title: 'Registrar Workshop'
+      submit: 'Registrar'

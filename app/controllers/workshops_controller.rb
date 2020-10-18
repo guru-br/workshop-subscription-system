@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class WorkshopsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
   # INDEX
   def index
     @workshops = Workshop.future
@@ -22,6 +22,18 @@ class WorkshopsController < ApplicationController
   # GET /workshops/:id
   def show
     @workshop = Workshop.find(params[:id])
+
+    redirect_to root_path, notice: I18n.t("workshops.notices.show.draft") if !can_view_workshop?(@workshop.draft?)
+  end
+
+  def edit
+    @workshop = Workshop.find(params[:id])
+  end
+
+  def update
+    workshop = Workshop.find(params[:id])
+    workshop.update!(workshop_params)
+    redirect_to edit_workshop_path(workshop), notice: I18n.t('workshops.notices.edit.success', name: workshop.name)
   end
 
   private
@@ -31,6 +43,12 @@ class WorkshopsController < ApplicationController
     params.require(:workshop).permit(:name, :short_description,
                                      :full_description, :duration,
                                      :attendees, :workshop_date,
-                                     :start_time)
+                                     :start_time, :status)
+  end
+
+  def can_view_workshop?(draft_workshop)
+    return true if user_signed_in?
+
+    attendee_signed_in? && !draft_workshop ? true : false
   end
 end
