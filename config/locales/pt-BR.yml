@@ -1,6 +1,14 @@
 ---
 pt-BR:
+  actions:
+    sign_up: 'Cadastrar-se'
   activerecord:
+    attributes:
+      attendee:
+        name: 'Nome'
+        email: 'Email'
+        password: 'Senha'
+        password_confirmation: 'Confirmar senha'
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
@@ -17,7 +25,7 @@ pt-BR:
     - sex
     - sáb
     abbr_month_names:
-    - 
+    -
     - jan
     - fev
     - mar
@@ -43,7 +51,7 @@ pt-BR:
       long: "%d de %B de %Y"
       short: "%d de %B"
     month_names:
-    - 
+    -
     - janeiro
     - fevereiro
     - março
