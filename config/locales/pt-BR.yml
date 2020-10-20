@@ -3,12 +3,6 @@ pt-BR:
   actions:
     sign_up: 'Cadastrar-se'
   activerecord:
-    attributes:
-      attendee:
-        name: 'Nome'
-        email: 'Email'
-        password: 'Senha'
-        password_confirmation: 'Confirmar senha'
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

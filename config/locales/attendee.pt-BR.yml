@@ -1,0 +1,9 @@
+---
+pt-BR:
+  activerecord:
+    attributes:
+      attendee:
+        name: 'Nome'
+        email: 'Email'
+        password: 'Senha'
+        password_confirmation: 'Confirmar senha'
