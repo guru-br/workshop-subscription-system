@@ -1,5 +1,10 @@
 class WorkshopsController < ApplicationController
   before_action :authenticate_user!
+  # INDEX
+  def index
+    @workshops = Workshop.future
+  end
+
   # GET
   def new
   end

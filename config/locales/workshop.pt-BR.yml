@@ -1,0 +1,10 @@
+---
+pt-BR:
+  activerecord:
+    attributes:
+      workshop:
+        short_description: 'Descrição Curta'
+        duration: 'Duração'
+        workshop_date: 'Data'
+        start_time: 'Hora'
+        attendees: 'Capacidade Máxima'
