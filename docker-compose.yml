@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: workshop_subscription
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/workshop
+      - gem_cache:/usr/local/bundle/gems
+    env_file:
+      - .env
+    depends_on:
+      - db
+  db:
+    image: postgres:12-alpine
+    env_file:
+      - .env
+    volumes:
+      - workshop_subscription:/var/lib/postgresql/data
+volumes:
+  workshop_subscription:
+  gem_cache:

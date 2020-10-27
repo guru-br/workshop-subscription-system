@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_10_15_234119) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "attendees", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 2020_10_15_234119) do
   end
 
   create_table "enrollments", force: :cascade do |t|
-    t.integer "workshop_id", null: false
-    t.integer "attendee_id", null: false
+    t.bigint "workshop_id", null: false
+    t.bigint "attendee_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["attendee_id"], name: "index_enrollments_on_attendee_id"
@@ -46,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_10_15_234119) do
   end
 
   create_table "workshop_contents", force: :cascade do |t|
-    t.integer "workshop_id", null: false
+    t.bigint "workshop_id", null: false
     t.string "title"
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
