@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Admin register workshop' do
@@ -28,11 +30,10 @@ feature 'Admin register workshop' do
                                  'na prática'
     expect(page).to have_content '60 minutos'
     expect(page).to have_content '05/12/2020'
-    expect(page).to have_css('dd', text: /^14:00$/ )
+    expect(page).to have_css('dd', text: /^14:00$/)
   end
 
   context 'must be signed in' do
-
     scenario 'to view link' do
       visit root_path
 
