@@ -1,3 +1,4 @@
 <% if user_signed_in? %>
-  <%= link_to 'Registrar Workshop', new_workshop_path %>
+  <%= link_to t(".register_workshops"), new_workshop_path %>
+  <%= link_to t(".list_workshops"), workshops_path %>
 <% end %>

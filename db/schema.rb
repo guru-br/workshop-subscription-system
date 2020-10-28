@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2020_10_18_003854) do
     t.datetime "updated_at", precision: 6, null: false
     t.date "workshop_date"
     t.time "start_time"
+    t.integer "status", default: 0
   end
 
   add_foreign_key "enrollments", "attendees"

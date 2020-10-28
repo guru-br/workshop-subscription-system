@@ -1,0 +1,5 @@
+pt-BR:
+  home:
+    index:
+      register_workshops: 'Registrar Workshop'
+      list_workshops: 'Listar workshops'
