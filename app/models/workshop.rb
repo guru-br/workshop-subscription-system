@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Workshop < ApplicationRecord
-  STATUSES = %i[draft active inactive]
+  STATUSES = %i[draft active inactive].freeze
 
   validates :name, :short_description, :full_description, :duration,
             :attendees, :workshop_date, :start_time, :status, presence: true
