@@ -17,6 +17,11 @@ Depois de criar seu `fork`, Escolha uma [issue](https://github.com/guru-br/works
 
 Referência: https://docs.github.com/en/enterprise/2.16/user/github/managing-your-work-on-github/closing-issues-using-keywords
 
+
+### Draft Pull Requests
+
+Ao começar o trabalho em uma [issue](https://github.com/guru-br/workshop-subscription-system/issues), assim que tiver algo para enviar um `commit`, aproveite e abra um novo pull request como `draft`. Desta forma os demais colaboradores saberão que aquela `issue` já está sendo tratada.
+
 ## Models
 
 ### User
