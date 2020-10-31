@@ -3,5 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe Enrollment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'validations' do
+    it { should validate_presence_of(:workshop) }
+    it { should validate_presence_of(:attendee) }
+    it { should validate_presence_of(:status) }
+  end
 end
