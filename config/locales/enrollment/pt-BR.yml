@@ -1,0 +1,9 @@
+pt-BR:
+  enrollments:
+    flash:
+      success:
+        waiting_list_enroll: 'Você se inscreveu na lista de espera do workshop "%{workshop_name}"'
+      error:
+        enroll_error: 'Não foi possível se inscrever na lista de espera do workshop "%{workshop_name}"'
+        already_enrolled: 'Você já está inscrito no workshop "%{workshop_name}"'
+        already_enrolled_waiting_list: 'Você já está inscrito na lista de espera do workshop "%{workshop_name}"'
