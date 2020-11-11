@@ -13,4 +13,16 @@ class EnrollmentsController < ApplicationController
   rescue StandardError => e
     redirect_to(workshop, flash: { error: e.message })
   end
+
+  def destroy
+    enrollment = Enrollment.find(params[:enrollment_id])
+    workshop = enrollment.workshop
+
+    enrollment.destroy
+
+    redirect_to(workshop, flash: { success: I18n.t('enrollments.flash.success.unenroll_attendee',
+                                                   workshop_name: workshop.name) })
+  rescue StandardError => e
+    redirect_to(workshop, flash: { error: e.message })
+  end
 end

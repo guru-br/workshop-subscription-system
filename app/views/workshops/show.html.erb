@@ -14,4 +14,8 @@
     <dt><%= t('.waiting_list') %></td>
     <dd><%= link_to(t('.waiting_list_link'), waiting_list_enrollments_path(workshop_id: @workshop.id), method: :post) %></dd>
   <% end %>
+  <% if @enrollment %>
+    <dt><%= t('.enrollment') %></td>
+    <dd><%= link_to('Cancelar inscrição', enrollment_path(enrollment_id: @enrollment.id), method: :delete) %></dd>
+  <% end %>
 </dl>

@@ -25,4 +25,9 @@ class Workshop < ApplicationRecord
 
     enrollments.create!(attendee: attendee, status: :waiting_list)
   end
+
+  def unenroll_attendee(attendee)
+    enrollment = enrollments.find_by(attendee: attendee)
+    enrollment.destroy!
+  end
 end
