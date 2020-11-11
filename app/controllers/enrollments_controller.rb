@@ -17,8 +17,11 @@ class EnrollmentsController < ApplicationController
   def destroy
     enrollment = Enrollment.find(params[:enrollment_id])
     workshop = enrollment.workshop
+    attendee = enrollment.attendee
 
-    enrollment.destroy
+    puts params
+
+    enrollment.destroy if attendee == current_attendee
 
     redirect_to(workshop, flash: { success: I18n.t('enrollments.flash.success.unenroll_attendee',
                                                    workshop_name: workshop.name) })
