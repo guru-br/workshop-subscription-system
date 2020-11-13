@@ -17,12 +17,16 @@ class Workshop < ApplicationRecord
   end
 
   def enrolled?(attendee)
-    enrollments.where(attendee: attendee).any?
+    enrollments.where(attendee: attendee, status: :enrolled).any?
   end
 
   def waiting_list_enroll(attendee)
     return nil unless full?
 
     enrollments.create!(attendee: attendee, status: :waiting_list)
+  end
+
+  def disenroll(attendee)
+    enrollments.find_by(attendee: attendee, status: :enrolled)&.destroy
   end
 end

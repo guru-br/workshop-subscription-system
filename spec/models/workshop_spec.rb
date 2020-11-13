@@ -84,6 +84,16 @@ RSpec.describe Workshop, type: :model do
         end
       end
 
+      context 'When the attendee is enrolled on this workshop waiting list' do
+        it 'returns true' do
+          workshop = create(:workshop, attendees: 2)
+          attendee = create(:attendee)
+          workshop.enrollments.create(attendee: attendee, status: :waiting_list)
+
+          expect(workshop.enrolled?(attendee)).to eq(false)
+        end
+      end
+
       context 'When the attendee is not enrolled on this workshop' do
         it 'returns false' do
           workshop = create(:workshop, attendees: 2)
@@ -91,6 +101,40 @@ RSpec.describe Workshop, type: :model do
 
           expect(workshop.enrolled?(attendee)).to eq(false)
         end
+      end
+    end
+  end
+
+  describe '#disenroll' do
+    context 'When the attendee is enrolled on this workshop' do
+      it 'returns the enrollment destroyed' do
+        workshop = create(:workshop, attendees: 1, status: :active)
+        attendee = create(:attendee)
+        workshop.enrollments.create(attendee: attendee)
+        enrollment = workshop.enrollments.last
+
+        expect(workshop.disenroll(attendee)).to eq(enrollment)
+      end
+    end
+
+    context 'When the attendee is enrolled on this workshop waiting list' do
+      it 'returns nil' do
+        workshop = create(:workshop, attendees: 0)
+        attendee = create(:attendee)
+
+        result = workshop.waiting_list_enroll(attendee)
+        expect(result).to be_kind_of(Enrollment)
+
+        expect(workshop.disenroll(attendee)).to eq(nil)
+      end
+    end
+
+    context 'When the attendee is not enrolled on this workshop' do
+      it 'returns nil' do
+        workshop = create(:workshop, attendees: 1)
+        attendee = create(:attendee)
+
+        expect(workshop.disenroll(attendee)).to eq(nil)
       end
     end
   end
