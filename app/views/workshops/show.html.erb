@@ -1,13 +1,17 @@
 <h1><%= @workshop.name %></h1>
 <dl>
-  <dt>Descrição Curta</dt>
+  <dt><%= t('.short_description') %></dt>
   <dd><%= @workshop.short_description %></dd>
-  <dt>Descrição Completa</dt>
+  <dt><%= t('.full_description') %></dt>
   <dd><%= @workshop.full_description %></dd>
-  <dt>Duração</dt>
+  <dt><%= t('.duration') %></dt>
   <dd><%= @workshop.duration %> minutos</dd>
-  <dt>Data</dt>
+  <dt><%= t('.start_date') %></dt>
   <dd><%= I18n.localize @workshop.workshop_date %></dd>
-  <dt>Hora</dt>
+  <dt><%= t('.start_time') %></dt>
   <dd><%= l @workshop.start_time, format: :short %></dd>
+  <% if @workshop.full? %>
+    <dt><%= t('.waiting_list') %></td>
+    <dd><%= link_to(t('.waiting_list_link'), waiting_list_enrollments_path(workshop_id: @workshop.id), method: :post) %></dd>
+  <% end %>
 </dl>

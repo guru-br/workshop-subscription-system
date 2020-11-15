@@ -21,7 +21,7 @@ Style/ClassAndModuleChildren:
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context', 'feature', 'scenario', 'let']
 Layout/LineLength:
-  Max: 80
+  Max: 120
 Style/AsciiComments:
   Enabled: false
 Rails/HasAndBelongsToMany:

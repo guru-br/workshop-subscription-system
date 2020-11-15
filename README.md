@@ -17,6 +17,11 @@ Depois de criar seu `fork`, Escolha uma [issue](https://github.com/guru-br/works
 
 Referência: https://docs.github.com/en/enterprise/2.16/user/github/managing-your-work-on-github/closing-issues-using-keywords
 
+
+### Draft Pull Requests
+
+Ao começar o trabalho em uma [issue](https://github.com/guru-br/workshop-subscription-system/issues), assim que tiver algo para enviar um `commit`, aproveite e abra um novo pull request como `draft`. Desta forma os demais colaboradores saberão que aquela `issue` já está sendo tratada.
+
 ## Models
 
 ### User
@@ -45,8 +50,8 @@ Conteúdos vinculados a um workshop e disponíveis somente para os participantes
 
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
-- Criar o arquivo `.env` para incluir as variaveis de ambientes necessárias
-  - O conteudo do arquivo pode ser igual ao `.env.sample` presente na raiz do
+- Criar o arquivo `.env` para incluir as variáveis de ambientes necessárias
+  - O conteúdo do arquivo pode ser igual ao `.env.sample` presente na raiz do
     projeto
 
 ### Instalação via Docker
@@ -57,8 +62,8 @@ Na pasta do projeto execute:
 docker-compose build
 ```
 
-Essa instalação ira instalar todas as dependencias requeridas para o projeto
-dentro de um volume do Docker
+Esse comando vai instalar todas as dependências necessárias para o projeto dentro
+de um volume do Docker
 
 ### Preparar o projeto via docker
 
@@ -68,8 +73,8 @@ Na pasta do projeto, após a instalação, execute:
 docker-compose run --rm web bin/setup
 ```
 
-A opção `--rm` ira remover o container quando ele for terminado de ser usado,
-porém não ira remover o volume
+A opção `--rm` removerá o container quando ele deixar de ser usado,
+porém não removerá o volume
 
 ### Subir o aplicativo via docker
 
@@ -79,7 +84,7 @@ Na pasta do projeto execute:
 docker-compose up
 ```
 
-A versão web estara disponível em localhost:3000
+A versão web estará disponível em localhost:3000
 
 ### Executar os testes dentro do Docker
 
