@@ -1,7 +1,9 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-feature "Attendee views workshop" do
-  scenario "successfully" do
+require 'rails_helper'
+
+feature 'Attendee views workshop' do
+  scenario 'successfully' do
     workshop = create(:workshop, status: :active)
     attendee = create(:attendee)
 
@@ -12,16 +14,16 @@ feature "Attendee views workshop" do
     expect(page).to have_content(workshop.name)
   end
 
-  context "workshop must not be a draft" do
-    scenario "to be viewed" do
+  context 'workshop must not be a draft' do
+    scenario 'to be viewed' do
       workshop = create(:workshop, status: :draft)
       attendee = create(:attendee)
-  
+
       login_as attendee
       visit workshop_path(workshop)
-  
+
       expect(current_path).to eq(root_path)
-      expect(page).to have_content(I18n.t("workshops.notices.show.draft"))
+      expect(page).to have_content(I18n.t('workshops.notices.show.draft'))
     end
   end
 end

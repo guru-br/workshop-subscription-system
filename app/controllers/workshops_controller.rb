@@ -23,7 +23,9 @@ class WorkshopsController < ApplicationController
   def show
     @workshop = Workshop.find(params[:id])
 
-    redirect_to root_path, notice: I18n.t("workshops.notices.show.draft") if !can_view_workshop?(@workshop.draft?)
+    return if can_view_workshop?(@workshop.draft?)
+
+    redirect_to root_path, notice: I18n.t('workshops.notices.show.draft')
   end
 
   def edit
@@ -33,7 +35,9 @@ class WorkshopsController < ApplicationController
   def update
     workshop = Workshop.find(params[:id])
     workshop.update!(workshop_params)
-    redirect_to edit_workshop_path(workshop), notice: I18n.t('workshops.notices.edit.success', name: workshop.name)
+    redirect_to edit_workshop_path(workshop),
+                notice: I18n.t('workshops.notices.edit.success',
+                               name: workshop.name)
   end
 
   private

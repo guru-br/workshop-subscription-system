@@ -14,7 +14,9 @@ describe 'attendee /devise/registrations' do
                 with: 'user@example.com'
         fill_in I18n.t('activerecord.attributes.attendee.password'),
                 with: 'pass123'
-        fill_in I18n.t('activerecord.attributes.attendee.password_confirmation'),
+        fill_in I18n.t(
+          'activerecord.attributes.attendee.password_confirmation'
+        ),
                 with: 'pass123'
 
         click_button I18n.t('actions.sign_up')
@@ -44,7 +46,9 @@ describe 'attendee /devise/registrations' do
                 with: nil
         fill_in I18n.t('activerecord.attributes.attendee.password'),
                 with: nil
-        fill_in I18n.t('activerecord.attributes.attendee.password_confirmation'),
+        fill_in I18n.t(
+          'activerecord.attributes.attendee.password_confirmation'
+        ),
                 with: nil
 
         click_button I18n.t('actions.sign_up')
