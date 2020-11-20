@@ -26,7 +26,7 @@ feature 'Attendee unenrolls from workshop' do
       login_as attendee
       visit workshop_path(workshop)
 
-      expect(page).not_to have_link('Cancelar inscrição')
+      expect(page).not_to have_button('Cancelar inscrição')
     end
   end
 end
