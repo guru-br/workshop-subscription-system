@@ -1,4 +1,6 @@
 # Gerenciador de Workshops
+![rspec](https://ruby.ci/badges/ac684bdb-cfc8-426b-ad7e-e798c2e0efa9/rspec)
+![rubocop](https://ruby.ci/badges/ac684bdb-cfc8-426b-ad7e-e798c2e0efa9/rubocop)
 
 ## O que é?
 
