@@ -1,6 +1,9 @@
 # Gerenciador de Workshops
 ![rspec](https://ruby.ci/badges/ac684bdb-cfc8-426b-ad7e-e798c2e0efa9/rspec)
 ![rubocop](https://ruby.ci/badges/ac684bdb-cfc8-426b-ad7e-e798c2e0efa9/rubocop)
+![brakeman](https://ruby.ci/badges/ac684bdb-cfc8-426b-ad7e-e798c2e0efa9/brakeman)
+![ruby_critic](https://ruby.ci/badges/ac684bdb-cfc8-426b-ad7e-e798c2e0efa9/ruby_critic)
+![bundler_audit](https://ruby.ci/badges/ac684bdb-cfc8-426b-ad7e-e798c2e0efa9/bundler_audit)
 
 ## O que é?
 
