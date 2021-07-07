@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :workshops, only: %i[index new create show edit index update]
 
-  resources :enrollments, only: [] do
+  resources :enrollments, only: %i[destroy] do
     post :waiting_list_create, to: 'enrollments#waiting_list_create', as: 'waiting_list', on: :collection
   end
 end

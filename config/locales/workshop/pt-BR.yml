@@ -36,3 +36,6 @@ pt-BR:
       start_time: 'Hora'
       waiting_list: 'Lista de espera'
       waiting_list_link: 'Inscrever-se na lista de espera'
+      enrollment: 'Participante inscrito'
+      unenroll_link: 'Cancelar inscrição'
+      
