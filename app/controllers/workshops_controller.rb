@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class WorkshopsController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:show, :index]
   # INDEX
   def index
     @workshops = Workshop.future
@@ -22,6 +22,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops/:id
   def show
     @workshop = Workshop.find(params[:id])
+    @enrollment = Enrollment.find_by(attendee: current_attendee, workshop: @workshop)
 
     return if can_view_workshop?(@workshop.draft?)
 
